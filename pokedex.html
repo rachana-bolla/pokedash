@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDash: Pokedex</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/pokedex.css" />
+    <link rel="stylesheet" href="./css/searchbar.css" />
+    <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/pokedex.js"></script>
+    <script defer src="./js/searchbar.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+    <div class="background-image"></div>
+
+    <div class="site-content">
+      <div class="navbar-container">
+        <nav class="navbar">
+          <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()" alt="Pokeball Menu Icon"/>
+          <ul>
+            <li class="logo-container"><a class="logo">Pokedash</a></li>
+            <li class="menu-container"><a href="./index.html" class="menu">Dashboard</a></li>
+            <li class="menu-container"><a href="./pokedex.html" class="menu">Pokedex</a></li>
+            <li class="menu-container"><a href="./developers.html" class="menu">Developers</a></li>
+          </ul>
+          <form>
+            <input type="text" title="Search Bar" placeholder="Search Pokemon"/>
+            <input type="submit" value="Search"/>
+          </form>
+        </nav>
+      </div>
+      
+      <!-- The following code section contains the shell for the main content of the pokedex page.
+           There is the page title in the h1 tag.  There is the pokedex window that has a linear gradient
+           to form the border of the pokedex screen.  This decision is because border color cannot be
+           linear gradient therefore this gives the resemblance of a linear gradient border. Then there is the
+           modal screen which is hidden by default and only shown when users click a pokemon card within the
+           pokedex screen.  Once that happens the modal will cover the pokedex screen completely.
+           There is a filler window for style design followed by the control window with control screen containing
+           forward and backward buttons.  Design decision for control window and control screen is to display a 
+           linear gradient border. -->
+      <main class="wrapper">
+        <h1>Pokedex</h1>
+        <section class="pokedex-window">
+          <section class="pokedex-screen"></section>
+
+          <div class="modal-screen">
+            <span class="close">&times;</span>
+          </div>
+        </section>
+
+        <section class="filler-window"></section>
+
+        <section class="control-window">
+          <section class="control-screen">
+            <button class="control-btn" id="back">back</button>
+            <button class="control-btn" id="next">next</button>
+          </section>
+        </section>
+      </main>
+    </div>
+    
+  </body>
+</html>

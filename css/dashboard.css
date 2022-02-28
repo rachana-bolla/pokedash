@@ -1,0 +1,108 @@
+/* Importing the font for the message that professor Oak says.  This is similar to the traditional game to make
+it look and feel easthetically similar to the pokemon experience. */
+@font-face {
+    font-family: poketype;
+    src: url(../font/Pokemon\ Font.ttf);
+}
+
+/* Styling the page similar to the pokedex page for consistency. */
+.wrapper {
+    width: 100%;
+    background-color: rgb(197, 195, 193, 0.8);
+    padding-top: 70px;
+    height: 100%;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+}
+
+/* This is the title of the sections on the dashboard.  It is styled to look like the acutal pokemon logo. */
+h1 {
+    text-align: center;
+    font-size: 2.7rem;
+    font-family: pokefont, sans-serif;
+    letter-spacing: 3px;
+    color: #FFCC01;
+    -webkit-text-stroke: 3px #355FAC;
+    text-shadow: -1px -1px 0 #355FAC, 1px -1px 0 #355FAC, -1px 1px 0 #355FAC, 1px 1px 0 #355FAC;
+    margin: 20px 10px 5px 10px;
+}
+
+/*properties for introduction*/
+.intro, .info {
+    width: 90%;
+	height:auto;
+    margin: auto;
+    background-color: beige;
+    height: fit-content;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* This is needed to keep professor Oak in his box when expanding the screen. */
+.intro {
+    min-height: 420px;
+}
+
+/*properties for images in introduction*/
+.welcome-image-full, .welcome-image-half {
+    float: left;
+    padding: 10px 20px;
+}
+
+/* The default setting for the half body image of professor Oak. */
+.welcome-image-half {
+    display: none;
+}
+
+/*properties for introduction displayed text */
+.welcome-message {
+    margin: 10px 20px;
+    /* padding: 10px; */
+    align-self: center;
+    font-family: poketype, Courier, monospace;
+    line-height: 1.6rem;
+}
+
+/*properties for dashboard donutchart*/
+.donutChart
+{
+	width:100%;
+	height:auto;
+   max-width: 800px;
+}
+
+/*properties for screen responsiveness*/
+@media screen and (max-width: 890px) {
+    .intro {
+        width: 90%;
+    }
+}
+
+/* Media query for the mobile view.  The full body image of professor Oak is replaced with his half body image. */
+@media only screen and (max-width: 500px) {
+    .wrapper {
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
+    }
+    
+    .intro {
+        width: 100%;
+    }
+
+    .welcome-image-full {
+        display: none;
+    }
+
+    .welcome-image-half {
+        display: inline-block;
+    }
+
+    .welcome-message {
+        font-size: 0.8rem;
+    }
+}

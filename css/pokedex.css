@@ -1,0 +1,250 @@
+/* Container for the main content of the pokedex page.  Everything on the page except for the navigation and
+search bars exist within the wrapper.  The container is full width and full height with padding on all sides
+and a border radius.  The background color is a shade of gray with transparency to keep the focus on content. */
+.wrapper {
+    width: 100%;
+    background-color: rgb(197, 195, 193, 0.8);
+    padding-top: 70px;
+    height: 100%;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* The title in h1 tag is center aligned on the page with a big font size and using the custom pokefont with
+sans-serif backup.  Letter spacing adds easthetics while color choice with stroke and shadow create a similar
+look to the original pokemon logo. */
+h1 {
+    text-align: center;
+    font-size: 2.7rem;
+    font-family: pokefont, sans-serif;
+    letter-spacing: 3px;
+    color: #FFCC01;
+    -webkit-text-stroke: 3px #355FAC;
+    text-shadow: -1px -1px 0 #355FAC, 1px -1px 0 #355FAC, -1px 1px 0 #355FAC, 1px 1px 0 #355FAC;
+    margin: 20px 10px 5px 10px;
+}
+
+/* These are the pokemon names inside the pokemon cards created dynamically using JS. */
+.pokemon-card h3 {
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+/* This pokedex window is colored with linear gradient similar to the navbar for consistency and has a backup
+background color of black.  Its width is limited to 1000px and centered on the page. Its display is set to flex 
+in order to vertically and horizontally center the child element inside.  Its position is set to relative so that
+its children can be absolute within its borders.  */
+.pokedex-window {
+    width: 1000px;
+    margin: auto;
+    height: 80%;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    background: linear-gradient(black, rgb(0, 0, 80));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* This is the pokedex screen and is a little smaller than the window to leave room for the border.  Its display
+is a grid to allow children to line up easily without extra, unnecessary css.  Overflow is on auto for scrolling.
+The position is absolute to the parent container. */
+.pokedex-screen {
+    width: 95%;
+    height: 90%;
+    background-color: rgb(199, 199, 199);
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    overflow: auto;
+    /* overflow-x: hidden; */
+    position: absolute;
+}
+
+/* This styles the scrollbar. */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* This styles the scrollbar. */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* This modal screen when display will completely cover the pokedex screen so the style is similar and the position
+is also absolute.  There is no grid display because the modal screen contains info for only one pokemon. */
+.modal-screen {
+    width: 95%;
+    height: 90%;
+    background-color: rgb(199, 199, 199);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+    overflow-x: hidden;
+    position: absolute;
+    display: none;
+}
+
+/* The close button for the modal screen is floated to the right.  Clear property might be used incorrectly here. */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    clear: right;
+}
+
+/* The hover and focus behaviour for the close button. */
+.close:hover, .close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+/* Filler window is just a dark blue color for stylistic purposes.  This connects the pokedex window to the
+control window and makes the whole piece look like a computer. */
+.filler-window {
+    width: 700px;
+    margin: auto;
+    height: 3%;
+    background-color: rgb(0, 0, 68);
+}
+
+/* The control window has a linear gradient background in reverse of the pokedex window, but everything else
+stayed the same as the pokedex window. */
+.control-window {
+    width: 1024px;
+    margin: auto;
+    height: 10%;
+    border-radius: 5px;
+    background-color: gray;
+    background: linear-gradient(rgb(0, 0, 80), black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This control screen is flexed so that the buttons inside lines up easily. */
+.control-screen {
+    width: 95%;
+    height: 80%;
+    background-color: rgb(83, 83, 83);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Both control buttons in the control screen will take up half the space so that the entire screen is filled. */
+.control-btn {
+    width: 50%;
+}
+
+/* Each pokemon card uses the full width and height of the parent container, in this case the grid cell in the
+parent container.  The background is beige and padding adds pleasing white space.  Alignment for content is
+centered inside the card, and the cursur will become a pointer on hover to show that users can click on item. */
+.pokemon-card {
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+    padding: 20px 10px 0 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* The hover behavior of the pokemon card hopefully notifies users that card can be clicked. */
+.pokemon-card:hover {
+    border: 2px solid rgb(0, 0, 80);
+}
+
+/* Style for the pokemon image inside the pokemon card. */
+.pokemon-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Style for the pokemon image inside the modal screen. */
+img.pokemon-modal-image {
+    width: 30%;
+}
+
+/* Media query for desktop view smaller than 1024px wide.  The three windows are relative to the screen size
+to help with responsiveness and give a smoother transition to the tablet view. */
+@media screen and (max-width: 1024px) {
+    .pokedex-window {
+        width: 98%;
+    }
+
+    .control-window {
+        width: 100%;
+    }
+
+    .filler-window {
+        width: 69%;
+    }
+}
+
+/* Media query for tablet view.  The pokemon card title tag is a bit smaller than in the bigger view.  The grid
+inside the pokedex screen is now only 3 columns wide.  The filler window is hidden so that the computer easthetic
+turns into a tablet easthetic.  Border radii are adjusted to create a unison look for the two screens */
+@media screen and (max-width: 890px) {
+    h3 {
+        font-size: 1.7rem;
+    }
+    .pokedex-screen {
+        grid-template-rows: repeat(2, 2fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .pokedex-window {
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .control-window {
+        width: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        align-items: flex-start;
+    }
+
+    .control-screen {
+        padding: 0;
+    }
+    
+    .filler-window {
+        display: none;
+    }
+}
+
+/* Media query for the large mobile view.  Grid contains on 2 columns */
+@media screen and (max-width: 650px) {
+    .pokedex-screen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query for the mobile view.  Grid contains on 1 columns */
+@media screen and (max-width: 500px) {
+    .pokedex-screen {
+        grid-template-rows: repeat(2, 2fr);
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .wrapper {
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
+	}
+    
+}

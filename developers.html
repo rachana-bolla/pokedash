@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDash: Developers</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/Styles.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+	    <link rel="stylesheet" href="./css/pokedex.css" />
+    <link rel="stylesheet" href="./css/searchbar.css" />
+    <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/searchbar.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+
+
+
+  <body onresize="displayMenu()">
+ 
+    <div class="background-image"></div>
+		<div class="site-content">
+		
+			<div class="navbar-container">
+				<nav class="navbar" alt="nav">
+					<img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()" alt="imag" />
+					<ul>
+						<li class="logo-container"><a class="logo">Pokedash</a></li>
+						<li class="menu-container"><a href="./index.html" class="menu">Dashboard</a></li>
+						<li class="menu-container"><a href="./pokedex.html" class="menu">Pokedex</a></li>
+						<li class="menu-container"><a href="./developers.html" class="menu">Developers</a></li>
+					</ul>
+					<form>
+						<input type="text" title="Search Bar" placeholder="Search Pokemon"/>
+						<input type="submit" value="Search"/>
+					</form>
+				</nav>
+			
+			</div>
+			
+		<!--------------------------------------------------------------------------------------------------->
+				  <main class="wrapper"><!-- using wrapper function from pokedex css,Body content control based on window layout-->
+					<h1>Developers</h1>			
+					<!-- below section is used in developers page -->
+								<div  class="container"> 
+									<div class="row" >
+										<div class="column" >
+											<div class="card">
+												<div class="flip-card">
+													<div class="flip-card-inner">
+														<div class="flip-card-front">
+															<img class="photo" src="./images/Rachana.jpeg" alt="Rachana" >
+														</div>
+														<div class="flip-card-back">
+															<img class="photo" src="./images/Jigglypuff.jpg" alt="Rachana" >
+														</div>
+													</div>
+												</div>
+											</div> 
+										</div> 
+										
+										<div class="columnT">
+											<div class="containerT">
+												<br>
+												<p class="myName">Rachana Bolla</p>
+												<p class="title" alt="psu">PSU Student</p>
+												<br>
+												<P class="aboutMe" alt="abt">About Me !!</P>
+												<p>“Hi All!  I’m Rachana, a graduate student at Portland State University.</p>
+												<p>I like cartoon and fantasies which brought me here ..</p>
+												<p>I believe in “Stand for your self”. </p>
+												<p>My motto : “Enjoy alone time and embrace yourself 💝”….  Love : Music 🎶 🎵 Travel 🚲🚞.. Adventures 🪂  movies 🎭 </p>
+												<br>
+												<p class="title" alt="em">Email: bolla@pdx.edu</p>
+											</div>
+										</div>
+									</div>
+									
+							   
+									<div class="row" >
+										<div class="column" >
+											<div class="card">
+												<div class="flip-card">
+													<div class="flip-card-inner">
+														<div class="flip-card-front">
+															<img class="photo" src="./images/Mina.jpeg" alt="Mina" >
+														</div>
+														<div class="flip-card-back">
+															<img class="photo" src="./images/Dragonite.gif" alt="Mina" >
+														</div>
+													</div>
+												</div>
+											</div> 
+										</div> 
+										
+										<div class="columnT">
+											<div class="containerT">
+												<br>
+												<p class="myName">Mina Vu</p>
+												<p class="title" alt="psu">PSU Student</p>
+												<br>
+												<P class="aboutMe" alt="abt">About Me !!</P>
+												<p>“Hi All!  I’m Mina, a graduate student at Portland State University.</p>
+												<p>I study computer science focusing on databases and train pokemons to one day master it all. </p>
+												<p> My hobbies include watching movies, enjoying delicious food, and going on hikes. </p>
+												<p> As a dedicated trainer, I have many pokemons that I partner with in battle.  Click my photo to see my favorite pokemon!” </p>
+												<br>
+												<p class="title" alt="em">Email: mina8@pdx.edu</p>
+											</div>
+										</div>
+									</div>
+								</div>  
+					</main>
+	   <!--------------------------------------------------------------------------------------------------->
+				
+		</div>
+   
+  </body>
+  
+  </html>

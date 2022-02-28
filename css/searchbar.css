@@ -1,0 +1,51 @@
+/* The search window is fixed on the screen just below the navbar.  It uses full width and full height of the screen
+with overflow set to auto for scrolling. */
+.search_window {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+/* The search modal is what contains all information added using JS.  It is a percentage of the parent container, the
+search window, to allow for responsiveness.  It allows for scrollable overflow and centers all inside elements. */
+.search_modal {
+    width: 80%;
+    height: 89vh;
+    overflow: auto;
+    overflow-x: hidden;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+}
+
+/* The title of the search modal.  The bottom padding gives pleasing white space. */
+.search_modal h3 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+/* The types of the pokemon in the search modal.  The padding gives pleasing white space. */
+.search_modal h5 {
+    font-size: 1rem;
+    padding: 5px;
+}
+
+/* The close button of the search modal is aligned to the right of this view. */
+.search_modal .close_search {
+    display: block;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Style of the images inside the search modal to be different from the images inside the 
+pokemon info modal and card. */
+.search_modal img {
+    width: 80px;
+}

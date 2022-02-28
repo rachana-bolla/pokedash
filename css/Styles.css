@@ -1,0 +1,245 @@
+/* Styling the page similar to the pokedex page for consistency. */
+.wrapper {
+  width: 100%;
+  background-color: rgb(197, 195, 193, 0.8);
+  padding-top: 70px;
+  height: 100%;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow: auto;
+}
+
+/* general layout sizing*/
+html {
+  box-sizing: border-box;
+
+}
+
+/* page layouts based on window size*/
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* setting style properties for the container  */
+#container{
+width: 100%;
+height: 100%;
+
+}
+
+/* defined container as a class used in div tags */
+.container {
+  margin-top: 3%;
+  padding: 0 16px;
+/* width : 100vh;  */
+  display: table;
+  margin-left:2%;
+}
+
+/*  .containerT= container for text properties*/
+.containerT {
+  padding: 0 16px;
+  display: table;
+}
+
+/*  setting row properties to build table using div tags to display the content*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  min-width:475px; 
+  padding: 0 4px;
+  margin-left:2%;
+  margin-right:2%;
+
+}
+
+/*column class=image section 30%space utilization for each row*/
+.column {
+  float: left;
+  text-align: center;
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/*columnT class= 70% text space utilization for each row*/
+.columnT {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: silver;
+  float: left;
+  width: 70%;
+  height:260px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: 2px solid maroon;
+  padding: 20px;
+  display: table;
+}
+
+/*card class used to set overall layout to display images & text*/
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  background-color:maroon;
+  border: 2px solid maroon;
+  
+}
+
+/* .photo class= photo properties*/
+ .photo{
+  width:97%;
+  height:260px;  
+  max-height: 260px;
+  text-align: center;
+  
+}
+
+/* .pokeCount = to display number of pokemons in the dashboard page*/
+.pokeCount
+{
+	float: left;
+	text-align: center;
+	width: 30%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+}
+
+ 
+.pokeList
+{
+	float: left;
+	text-align: left;
+	width: 70%;
+	margin-bottom: 16px;
+	padding: 0 8px;
+  
+	
+}
+
+/* welcome message on dashboard=professor oka*/
+.welcome-message {
+    margin: 10px 20px;
+    /* padding: 10px; */
+	font-size:1.3rem;
+    align-self: center;
+    font-family: poketype, Courier, monospace;
+    line-height: 1.6rem;
+}
+
+
+.boxGraph
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: silver;
+  float: left;
+  width: 48%;
+  height:260px;
+  margin-top: 8px;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 8px;
+  border: 2px solid maroon;
+  padding: 20px;
+  display: table;	
+  position: relative;
+}
+
+/*  adjusting the layout based on window size*/
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+  flex-wrap: wrap;
+}
+/*  font style for developers name*/
+.myName {
+  color: Maroon;
+  font: 20px Arial, sans-serif;
+  font-weight: bold;
+}
+/*  font size for developers title*/
+.title {
+  color: DarkSlateBlue;
+  font-weight: bold;
+}
+
+/*  font size for developers emailid*/
+.emailid {
+  color: DarkSlateBlue;
+  font-weight: bold;
+}
+/*  font size for about developers */
+.aboutMe{
+  color: #581845;
+  font-weight: bold; 
+}
+
+/*  .flip-card: card layout*/
+.flip-card {
+  background-color: transparent;
+  background-color:maroon;
+  width:100%;
+  height:260px; 
+  max-height :260px;  
+  perspective: 1000px;
+}
+/* fliping of the  picture properties are below*/
+
+/*  .flip-card-inner = inner layout*/
+.flip-card-inner {
+  position: relative;
+  width:100%;  
+  height:260px; 
+  max-height :260px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width:100%;
+  height:260px; 
+  max-height :260px;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: maroon;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: maroon;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*************************************************************************************/
+/*below are screen sizing responsive properties*/
+@media screen and (max-width: 800px) {
+	.boxGraph
+	{
+	  width: 100%;
+	  height:260px;
+	}
+	  .welcome-message {
+	 font-size:1rem; 
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .column 
+  {
+    width: auto; height: auto;
+    display: block;
+  }
+
+}

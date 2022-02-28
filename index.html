@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDash: Dashboard</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/Styles.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/pokedex.css" />
+    <link rel="stylesheet" href="./css/searchbar.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/searchbar.js"></script>
+	  <script defer src="./js/dashboard.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	
+  </head>
+  <body>
+    <div class="background-image"></div>
+
+    <div class="site-content">
+      <div class="navbar-container">
+        <nav class="navbar">
+          <img src="./images/pokeball-icon.png" class="menu-icon" width="35" height="35" onclick="handleMenuIcon()" alt="Poke"/>
+          <ul>
+            <li class="logo-container"><a class="logo">Pokedash</a></li>
+            <li class="menu-container"><a href="./index.html" class="menu">Dashboard</a></li>
+            <li class="menu-container"><a href="./pokedex.html" class="menu">Pokedex</a></li>
+            <li class="menu-container"><a href="./developers.html" class="menu">Developers</a></li>
+            
+          </ul>
+          <form>
+            <input type="text" title="Search Bar" placeholder="Search Pokemon"/>
+            <input type="submit" value="Search"/>
+          </form>
+        </nav>
+      </div>
+      
+      <main class="wrapper">
+        <!-- This is the title of the page. -->
+        <h1>Dashboard</h1>
+        <!-- This is the introduction screen.  It shows an image of professor Oak (different for desktop/tablet
+             and mobile views) and a message from him to users. -->
+        <div class="intro">
+            <img src="./images/professor-oak.png" height="400" width="auto" class="welcome-image-full" alt="Oak"/>
+            <img src="./images/professor-oak-half.png" height="200" width="auto" class="welcome-image-half" alt="Oakhalf"/>
+            <p class="welcome-message">Oak:  Hello there!  Welcome to the world of POKEMON!  
+            My name is OAK!  People call me the POKEMON PROFESSOR!  
+            This world is inhabited by creatures called POKEMON!
+            For some people, POKEMON are pets.  Others use them for fights.  
+            Myself...I study POKEMON as a profession.
+            This site is the Pokedash where you beginners can learn more about POKEMON!
+            Check out the Pokedex to learn all about each POKEMON and their stats!
+            Visit our developers page to meet a couple of wonderful trainers.
+            You can also search for a POKEMON using the search bar.
+            Now have fun on your journey to catch them all! 
+          </p>
+        </div>
+
+        <!-- bar chart for pokemon game regions and respective number of pokemons in each region-->
+        <h1>Pokemon Region</h1>
+        <div  class="info">
+            <canvas id="pokeChart" style="width:100%;max-height: 400px;"></canvas>
+
+        </div>
+
+       <!-- donut chart for total original pokemon types 18 and respective number of pokemons in each type  -->
+        <h1>Pokemon Type</h1>
+        <div class="info">
+		
+	
+		<canvas id="myChart" class="donutChart"></canvas>
+	
+      </div>
+      </main>
+    </div>
+
+<!--https://pokemongo.fandom.com/wiki/Types used to get types of pokemons for dashboard page donut chart(pokemon type chart)
+
+    Bar plot used below links to gather information about regions-respective count in each region
+    https://www.sideshow.com/blog/what-are-8-regions-pokemon
+    https://bulbapedia.bulbagarden.net/wiki/Generation used to get information for generations and respective number of pokemon 
+-->
+  </body>
+  </html>

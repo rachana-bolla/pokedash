@@ -1,0 +1,224 @@
+/* Here, we import the pokemon font to use as the logo and the title and heading. */
+@font-face {
+    font-family: pokefont;
+    src: url(../font/Pokemon\ Solid.ttf);
+}
+
+/* Adding a simple background color to the whole page. */
+body {
+    background-color: rgb(214, 214, 214);
+    
+}
+
+/* Setting the background image to professor Oak's lab image.  The image is centered with no repeat and covers
+the screen.  It also has a blur as to not be distracting to the content on top. */
+.background-image {
+    background-image: url(../images/professor-oak-lab.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+    height: 100vh;
+}
+
+/* The site content is absolute and uses the full width and height of the screen. */
+.site-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+/* The navbar container has a linear gradient background with a backup color of black.  It is fixed height and
+position on the screen. */
+.navbar-container {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-color: black;
+    background: linear-gradient(black, rgb(0, 0, 80));
+}
+
+/* The navbar itself is a fix width and centers in the navbar container.  This will look nice on big screen sizes.
+The display is flex to easily position the children elements. */
+.navbar {
+    margin: auto;
+    width: 1024px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 35px;
+}
+
+/* The display here is flex and children are lined up at the start. */
+.navbar ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+/* Setting a fix width for the logo container. */
+.navbar li.logo-container {
+    width: 200px;
+    height: 100%;
+}
+
+/* Setting a fix width for the menu container. */
+.navbar li.menu-container {
+    width: 150px;
+    height: 100%;
+}
+
+/* Basic styling for the a tag in a navbar.  Flex display to vertically and horizontally center the content. */
+.navbar a {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a.logo {
+    cursor: default;
+}
+
+/* Designing the logo to look like the actual pokemon logo. */
+.navbar .logo {
+    width: 100%;
+    font-family: pokefont, sans-serif;
+    color: #FFCC01;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    -webkit-text-stroke: 3px #355FAC;
+    text-shadow: -1px -1px 0 #355FAC, 1px -1px 0 #355FAC, -1px 1px 0 #355FAC, 1px 1px 0 #355FAC;
+}
+
+/* Setting text color to white for good color contrasting. */
+.navbar .menu {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Setting default display of menu icon because it is only used in the mobile view. */
+.navbar .menu-icon {
+    display: none;
+}
+
+/* Setting the hover behavior of the menu items so that users see it better. */
+.menu:hover {
+    border-left: 2px solid red;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+/* Flexing the form. */
+.navbar form {
+    display: flex;
+}
+
+/* Setting similar hieght for both input elements. */
+.navbar input {
+    height: 50%;
+    margin: auto;
+    border-width: 0;
+}
+
+/* Styling text input to merge seamlessly with the button to the right. */
+.navbar input[type="text"] {
+    width: 150px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Styling submit input to merge seamlessly with the text field to the left. */
+.navbar input[type="submit"] {
+    width: 75px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Styling the hover behavior of the submit button. */
+.navbar input[type="submit"]:hover {
+    background: gray;
+}
+
+/* Media query for the screen sizes up to 1024px. */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 7px;
+    }
+}
+
+/* Media query for the tablet view.  The search bar form is no longer visible, and that feature is not offered. */
+@media screen and (max-width: 890px) {
+    .navbar {
+        padding: 5px 5px 0;
+    }
+
+    .navbar ul {
+        justify-content: center;
+    }
+    
+    .navbar form {
+        display: none;
+    }
+}
+
+/* Media query for the mobile view.  The menu items are hidden within a hamburger/pokeball icon.  The icon is
+positioned to the right in the navbar.  The menu is now centered and stacks up. */
+@media screen and (max-width: 500px) {
+    .navbar-container {
+        height: auto;
+        position: relative;
+        z-index: 9;
+    }
+
+    .navbar {
+        padding: 20px 0 0;
+    }
+
+    .navbar .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li.logo-container, .navbar li.menu-container, .navbar a {
+        width: 200px;
+        height: 50px;
+    }
+
+    .navbar li.menu-container {
+        display: none;
+        /* position: relative; */
+    }
+
+    .menu:hover {
+        border: 2px solid red;
+        border-radius: 5px;
+        font-size: 1.6rem;
+    }
+
+    .navbar form {
+        display: none;
+    }
+}
